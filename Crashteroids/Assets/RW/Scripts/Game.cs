@@ -36,7 +36,7 @@ using UnityEngine.UI;
 public class Game : MonoBehaviour
 {
     public int score = 0;
-    public int power = 0;
+
     public bool isGameOver = false;
 
     [SerializeField]
@@ -47,6 +47,8 @@ public class Game : MonoBehaviour
     private Text gameOverText;
     [SerializeField]
     private Text scoreText;
+    [SerializeField]
+    private Text powerText;
     [SerializeField]
     private Text titleText;
     [SerializeField]
@@ -60,6 +62,7 @@ public class Game : MonoBehaviour
         titleText.enabled = true;
         gameOverText.enabled = false;
         scoreText.enabled = false;
+        powerText.enabled = false;
         startGameButton.SetActive(true);
     }
 
@@ -83,6 +86,11 @@ public class Game : MonoBehaviour
         score = 0;
         scoreText.text = "Score: " + score;
         scoreText.enabled = true;
+
+        instance.GetShip().power = 0;
+        powerText.text = "power: " + instance.GetShip().power + "/15";
+        powerText.enabled = true;
+
         spawner.BeginSpawning();
         shipModel.GetComponent<Ship>().RepairShip();
         spawner.ClearAsteroids();
@@ -92,12 +100,26 @@ public class Game : MonoBehaviour
     public static void AsteroidDestroyed()
     {
         instance.score++;
-        if (instance.power < 15)
+
+        if (instance.GetShip().power < 15 && instance.GetShip().powerUpActive == false)
         {
-            instance.power++;
+            instance.GetShip().power++;
         }
+
         
         instance.scoreText.text = "Score: " + instance.score;
+        instance.powerText.text = "Power: " + instance.GetShip().power + "/15";
+    }
+
+
+    public Text GetPowerText()
+    {
+        return powerText;
+    }
+
+    public static Game GetInstance()
+    {
+        return instance;
     }
 
     public Ship GetShip()
