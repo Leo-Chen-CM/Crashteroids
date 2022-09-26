@@ -162,4 +162,13 @@ public class TestSuite
         // 2
         Assert.AreEqual(1, game.power);
     }
+
+    [UnityTest]
+    public IEnumerator ButtonPressStartsInvincibility()
+    {
+        game.GetShip().invincibilityActivated = false;
+        game.GetShip().TemporaryInvincibility();
+        yield return new WaitForSeconds(0.1f);
+        Assert.True(game.GetShip().invincibilityActivated);
+    }
 }

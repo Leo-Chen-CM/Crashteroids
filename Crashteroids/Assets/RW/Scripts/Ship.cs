@@ -38,6 +38,7 @@ public class Ship : MonoBehaviour
     public float speed = 1;
     public bool canShoot = true;
     public bool powerUpActive = false;
+    public bool invincibilityActivated = false;
 
     [SerializeField]
     private  MeshRenderer mesh;
@@ -72,7 +73,11 @@ public class Ship : MonoBehaviour
         {
             MoveRight();
         }
-        TemporaryInvincibility();
+
+        if (Input.GetKey(KeyCode.Z))
+        {
+            TemporaryInvincibility();
+        }
     }
 
     public void ShootLaser()
@@ -149,9 +154,6 @@ public class Ship : MonoBehaviour
 
     public void TemporaryInvincibility()
     {
-        if (Input.GetKey(KeyCode.Z))
-        {
-            Debug.Log("Test");
-        }
+        invincibilityActivated = true;        
     }
 }
