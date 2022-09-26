@@ -72,6 +72,7 @@ public class Ship : MonoBehaviour
         {
             MoveRight();
         }
+        TemporaryInvincibility();
     }
 
     public void ShootLaser()
@@ -88,8 +89,6 @@ public class Ship : MonoBehaviour
             GameObject laserShot2 = SpawnLaser();
             GameObject laserShot3 = SpawnLaser();
             laserShot.transform.position = shotSpawn.position;
-            laserShot2.transform.position = (shotSpawn.position.x + 10, shotSpawn.position.y);
-            laserShot3.transform.position = (shotSpawn.position.x - 10, shotSpawn.position.y);
             yield return new WaitForSeconds(0.4f);
             canShoot = true;
         }
@@ -146,5 +145,13 @@ public class Ship : MonoBehaviour
         explosion.SetActive(false);
         mesh.enabled = true;
         isDead = false;
+    }
+
+    public void TemporaryInvincibility()
+    {
+        if (Input.GetKey(KeyCode.Z))
+        {
+            Debug.Log("Test");
+        }
     }
 }
