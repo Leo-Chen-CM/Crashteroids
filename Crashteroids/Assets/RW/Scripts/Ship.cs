@@ -40,6 +40,10 @@ public class Ship : MonoBehaviour
     public bool powerUpActive = false;
     [SerializeField]
     public bool invincibilityActivated = false;
+    [SerializeField]
+    public const int MAX_TIMER_TIME = 300;
+    [SerializeField]
+    public int timer = 0;
 
     [SerializeField]
     private  MeshRenderer mesh;
@@ -78,6 +82,16 @@ public class Ship : MonoBehaviour
         if (Input.GetKey(KeyCode.Z))
         {
             TemporaryInvincibility();
+        }
+
+        if (invincibilityActivated == true)
+        {
+            timer++;
+        }
+        if (timer >= MAX_TIMER_TIME)
+        {
+            invincibilityActivated = false;
+            timer = 0;
         }
     }
 
