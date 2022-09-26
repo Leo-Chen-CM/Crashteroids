@@ -154,13 +154,14 @@ public class TestSuite
     public IEnumerator PowerupMetreCharges()
     {
         // 1
+        game.GetShip().power = 0;
         GameObject asteroid = game.GetSpawner().SpawnAsteroid();
         asteroid.transform.position = Vector3.zero;
         GameObject laser = game.GetShip().SpawnLaser();
         laser.transform.position = Vector3.zero;
         yield return new WaitForSeconds(0.1f);
         // 2
-        Assert.AreEqual(1, game.power);
+        Assert.AreEqual(1, game.GetShip().power);
     }
 
     [UnityTest]
@@ -183,4 +184,40 @@ public class TestSuite
         yield return new WaitForSeconds(0.1f);
         Assert.False(game.isGameOver);
     }
+    public IEnumerator PowerupActive()
+    {
+        game.GetShip().power = 15;
+        game.GetShip().ActivatePowerup();
+        yield return new WaitForSeconds(0.1f);
+
+        Assert.True(game.GetShip().powerUpActive);
+    }
+
+    [UnityTest]
+    public IEnumerator PowerDown()
+    {
+        game.GetShip().power = 15;
+        game.GetShip().ActivatePowerup();
+        yield return new WaitForSeconds(15);
+
+        Assert.AreEqual(0, game.GetShip().power);
+    }
+
+    [UnityTest]
+    public IEnumerator PowerDoesNotIncreaseWhileActive()
+    {
+        game.GetShip().power = 15;
+        game.GetShip().ActivatePowerup();
+
+        yield return new WaitForSeconds(5);
+
+        GameObject asteroid = game.GetSpawner().SpawnAsteroid();
+        asteroid.transform.position = Vector3.zero;
+        GameObject laser = game.GetShip().SpawnLaser();
+        laser.transform.position = Vector3.zero;
+        yield return new WaitForSeconds(0.1f);
+
+        Assert.AreEqual(9, game.GetShip().power);
+    }
+
 }

@@ -44,6 +44,7 @@ public class Ship : MonoBehaviour
     public const int MAX_TIMER_TIME = 300;
     [SerializeField]
     public int timer = 0;
+    public int power = 0;
 
     [SerializeField]
     private  MeshRenderer mesh;
@@ -67,6 +68,11 @@ public class Ship : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && canShoot)
         {
             ShootLaser();
+        }
+
+        if (Input.GetKey(KeyCode.X))
+        {
+            ActivatePowerup();
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
@@ -93,6 +99,7 @@ public class Ship : MonoBehaviour
             invincibilityActivated = false;
             timer = 0;
         }
+
     }
 
     public void ShootLaser()
@@ -109,6 +116,8 @@ public class Ship : MonoBehaviour
             GameObject laserShot2 = SpawnLaser();
             GameObject laserShot3 = SpawnLaser();
             laserShot.transform.position = shotSpawn.position;
+            laserShot2.transform.position = new Vector3 (shotSpawn.position.x + 2, shotSpawn.position.y);
+            laserShot3.transform.position = new Vector3 (shotSpawn.position.x - 2, shotSpawn.position.y);
             yield return new WaitForSeconds(0.4f);
             canShoot = true;
         }
@@ -120,7 +129,6 @@ public class Ship : MonoBehaviour
             yield return new WaitForSeconds(0.4f);
             canShoot = true;
         }
-
     }
 
     public GameObject SpawnLaser()
@@ -148,9 +156,34 @@ public class Ship : MonoBehaviour
         }
     }
 
+    IEnumerator PowerDown()
+    {
+        for (;;)
+        {
+            if (power > 0)
+            {
+                power--;
+            }
+            else
+            {
+                powerUpActive = false;
+            }
+
+            Game.GetInstance().GetPowerText().text = "Power: " + power + "/15";
+
+            Debug.Log("Power: " + power);
+
+            yield return new WaitForSeconds(1);
+        }
+    }
+
     public void ActivatePowerup()
     {
-        powerUpActive = true;
+        if (power >= 15)
+        {
+            powerUpActive = true;
+            StartCoroutine(PowerDown());
+        }
     }
 
     public void Explode()
