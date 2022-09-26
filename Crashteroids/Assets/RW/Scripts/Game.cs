@@ -90,7 +90,7 @@ public class Game : MonoBehaviour
         scoreText.text = "Score: " + score;
         scoreText.enabled = true;
 
-        instance.GetShip().power = 0;
+        instance.GetShip().power = 15;
         powerText.text = "Power: " + instance.GetShip().power + "/15";
         powerText.enabled = true;
 

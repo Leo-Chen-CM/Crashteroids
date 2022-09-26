@@ -101,6 +101,12 @@ public class Ship : MonoBehaviour
             timer = 0;
         }
 
+        if (powerUpActive == false)
+        {
+            StopCoroutine(PowerDown());
+        }
+
+
     }
 
     public void ShootLaser()
@@ -159,7 +165,8 @@ public class Ship : MonoBehaviour
 
     IEnumerator PowerDown()
     {
-        for (;;)
+
+        while (powerUpActive)
         {
             if (power > 0)
             {
@@ -176,11 +183,12 @@ public class Ship : MonoBehaviour
 
             yield return new WaitForSeconds(1);
         }
+
     }
 
     public void ActivatePowerup()
     {
-        if (power >= 15)
+        if (power == 15)
         {
             powerUpActive = true;
             StartCoroutine(PowerDown());
