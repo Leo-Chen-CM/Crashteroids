@@ -59,7 +59,16 @@ public class Asteroid : MonoBehaviour
         {
             if (Game.getInstance().GetShip().invincibilityActivated == false)
             {
-                Game.GameOver();
+                if (Game.getInstance().GetShip().lives > 1)
+                {
+                    Game.getInstance().GetShip().lives--;
+                }
+                else
+                {
+                    Game.getInstance().GetShip().lives--;
+                    Game.GameOver();
+                }
+
             }
             Destroy(gameObject);
         }

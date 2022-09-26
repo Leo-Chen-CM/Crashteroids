@@ -52,6 +52,8 @@ public class Game : MonoBehaviour
     [SerializeField]
     private Text titleText;
     [SerializeField]
+    private Text livesText;
+    [SerializeField]
     private Spawner spawner;
 
     private static Game instance;
@@ -63,6 +65,7 @@ public class Game : MonoBehaviour
         gameOverText.enabled = false;
         scoreText.enabled = false;
         powerText.enabled = false;
+        livesText.enabled = false;
         startGameButton.SetActive(true);
     }
 
@@ -88,8 +91,12 @@ public class Game : MonoBehaviour
         scoreText.enabled = true;
 
         instance.GetShip().power = 0;
-        powerText.text = "power: " + instance.GetShip().power + "/15";
+        powerText.text = "Power: " + instance.GetShip().power + "/15";
         powerText.enabled = true;
+
+        instance.GetShip().lives = 3;
+        livesText.text = "Lives: " + instance.GetShip().lives;
+        livesText.enabled = true;
 
         spawner.BeginSpawning();
         shipModel.GetComponent<Ship>().RepairShip();

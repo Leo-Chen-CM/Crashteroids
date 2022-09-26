@@ -45,6 +45,7 @@ public class Ship : MonoBehaviour
     [SerializeField]
     public int timer = 0;
     public int power = 0;
+    public int lives = 3;
 
     [SerializeField]
     private  MeshRenderer mesh;
