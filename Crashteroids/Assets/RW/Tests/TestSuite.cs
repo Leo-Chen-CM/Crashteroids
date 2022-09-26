@@ -171,4 +171,16 @@ public class TestSuite
         yield return new WaitForSeconds(0.1f);
         Assert.True(game.GetShip().invincibilityActivated);
     }
+
+    [UnityTest]
+    public IEnumerator InvincibilityTest()
+    {
+        game.GetShip().TemporaryInvincibility();
+        game.isGameOver = false;
+        GameObject asteroid = game.GetSpawner().SpawnAsteroid();
+        asteroid.transform.position = game.GetShip().transform.position;
+
+        yield return new WaitForSeconds(0.1f);
+        Assert.False(game.isGameOver);
+    }
 }
