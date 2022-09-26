@@ -131,4 +131,9 @@ public class Game : MonoBehaviour
     {
         return spawner.GetComponent<Spawner>();
     }
+
+    public static Game getInstance()
+    {
+        return instance;
+    }
 }

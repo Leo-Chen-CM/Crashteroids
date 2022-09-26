@@ -34,6 +34,8 @@ using UnityEngine;
 
 public class Asteroid : MonoBehaviour
 {
+    private GameObject shipModel;
+
     public float speed = 1;
     private float maxY = -5;
 
@@ -55,7 +57,10 @@ public class Asteroid : MonoBehaviour
     {
         if (collision.gameObject.name == "ShipModel")
         {
-            Game.GameOver();
+            if (Game.getInstance().GetShip().invincibilityActivated == false)
+            {
+                Game.GameOver();
+            }
             Destroy(gameObject);
         }
     }

@@ -38,6 +38,12 @@ public class Ship : MonoBehaviour
     public float speed = 1;
     public bool canShoot = true;
     public bool powerUpActive = false;
+    [SerializeField]
+    public bool invincibilityActivated = false;
+    [SerializeField]
+    public const int MAX_TIMER_TIME = 300;
+    [SerializeField]
+    public int timer = 0;
     public int power = 0;
 
     [SerializeField]
@@ -79,6 +85,20 @@ public class Ship : MonoBehaviour
             MoveRight();
         }
 
+        if (Input.GetKey(KeyCode.Z))
+        {
+            TemporaryInvincibility();
+        }
+
+        if (invincibilityActivated == true)
+        {
+            timer++;
+        }
+        if (timer >= MAX_TIMER_TIME)
+        {
+            invincibilityActivated = false;
+            timer = 0;
+        }
 
     }
 
@@ -178,5 +198,10 @@ public class Ship : MonoBehaviour
         explosion.SetActive(false);
         mesh.enabled = true;
         isDead = false;
+    }
+
+    public void TemporaryInvincibility()
+    {
+        invincibilityActivated = true;        
     }
 }
