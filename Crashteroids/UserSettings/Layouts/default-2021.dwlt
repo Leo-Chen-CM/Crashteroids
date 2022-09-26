@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 998
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Game
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 96
+  controlID: 49
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 454
     height: 948
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -94,8 +94,8 @@ MonoBehaviour:
     y: 0
     width: 362.5
     height: 561
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ProjectBrowser
+  m_Name: ConsoleWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -120,14 +120,14 @@ MonoBehaviour:
     y: 561
     width: 1466
     height: 387
-  m_MinSize: {x: 231, y: 271}
-  m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 13}
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 13}
   - {fileID: 18}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 16
+  controlID: 50
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 17
+  controlID: 86
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -268,8 +268,8 @@ MonoBehaviour:
     y: 0
     width: 1103.5
     height: 561
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 16}
@@ -306,7 +306,7 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
   m_Spl:
-    ID: 928
+    ID: 929
     splitterInitialOffset: 0
     currentActiveSplitter: -1
     realSizes:
@@ -338,7 +338,7 @@ MonoBehaviour:
       name: UnityUnitTestingTutorial
       fullName: UnityUnitTestingTutorial
       resultStatus: 1
-      duration: 0.2523434
+      duration: 1.4641998
       messages: 
       output: 
       stacktrace: 
@@ -349,12 +349,12 @@ MonoBehaviour:
       categories: []
       parentId: 
       parentUniqueId: 
-    - id: 1010
-      uniqueId: '[Tests][C:/Users/gameuser/Desktop/4th Year Work/Real World Modeling/Crashteroids_C00248444_C00250593/Crashteroids/Library/ScriptAssemblies/Tests.dll][suite]'
+    - id: 1012
+      uniqueId: '[Tests][C:/Users/gameuser/Desktop/Actual Crashteroids for lab 4/Crashteroids/Crashteroids/Library/ScriptAssemblies/Tests.dll][suite]'
       name: Tests.dll
-      fullName: C:/Users/gameuser/Desktop/4th Year Work/Real World Modeling/Crashteroids_C00248444_C00250593/Crashteroids/Library/ScriptAssemblies/Tests.dll
+      fullName: C:/Users/gameuser/Desktop/Actual Crashteroids for lab 4/Crashteroids/Crashteroids/Library/ScriptAssemblies/Tests.dll
       resultStatus: 1
-      duration: 0.2126452
+      duration: 1.4308305
       messages: 
       output: 
       stacktrace: 
@@ -370,7 +370,7 @@ MonoBehaviour:
       name: TestSuite
       fullName: TestSuite
       resultStatus: 1
-      duration: 0.2066637
+      duration: 1.4258223
       messages: 
       output: 
       stacktrace: 
@@ -387,7 +387,24 @@ MonoBehaviour:
       name: AsteroidsMoveDown
       fullName: TestSuite.AsteroidsMoveDown
       resultStatus: 1
-      duration: 0.2112865
+      duration: 0.2627565
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: Tests.dll/[Tests][TestSuite][suite]
+    - id: 1011
+      uniqueId: Tests.dll/TestSuite/[Tests][TestSuite.ButtonPressStartsInvincibility]
+      name: ButtonPressStartsInvincibility
+      fullName: TestSuite.ButtonPressStartsInvincibility
+      resultStatus: 1
+      duration: 0.2052453
       messages: 
       output: 
       stacktrace: 
@@ -404,7 +421,7 @@ MonoBehaviour:
       name: DestroyedAsteroidRaisesScore
       fullName: TestSuite.DestroyedAsteroidRaisesScore
       resultStatus: 1
-      duration: 0.1136377
+      duration: 0.1080204
       messages: 
       output: 
       stacktrace: 
@@ -421,7 +438,7 @@ MonoBehaviour:
       name: EachAsteroidsGameOver
       fullName: TestSuite.EachAsteroidsGameOver
       resultStatus: 1
-      duration: 0.4178459
+      duration: 0.4042138
       messages: 
       output: 
       stacktrace: 
@@ -438,7 +455,7 @@ MonoBehaviour:
       name: GameOverOccursOnAsteroidCollision
       fullName: TestSuite.GameOverOccursOnAsteroidCollision
       resultStatus: 1
-      duration: 0.1129403
+      duration: 0.1065683
       messages: 
       output: 
       stacktrace: 
@@ -455,7 +472,7 @@ MonoBehaviour:
       name: GameOverSetScore0
       fullName: TestSuite.GameOverSetScore0
       resultStatus: 1
-      duration: 0.008326
+      duration: 0.0056499
       messages: 
       output: 
       stacktrace: 
@@ -472,7 +489,7 @@ MonoBehaviour:
       name: LaserDestroysAsteroid
       fullName: TestSuite.LaserDestroysAsteroid
       resultStatus: 1
-      duration: 0.1096971
+      duration: 0.1040657
       messages: 
       output: 
       stacktrace: 
@@ -489,7 +506,7 @@ MonoBehaviour:
       name: LaserMovesUp
       fullName: TestSuite.LaserMovesUp
       resultStatus: 1
-      duration: 0.1133123
+      duration: 0.1040204
       messages: 
       output: 
       stacktrace: 
@@ -506,7 +523,7 @@ MonoBehaviour:
       name: NewGameRestartsGame
       fullName: TestSuite.NewGameRestartsGame
       resultStatus: 1
-      duration: 0.0131488
+      duration: 0.0041027
       messages: 
       output: 
       stacktrace: 
@@ -523,7 +540,7 @@ MonoBehaviour:
       name: PowerupMetreCharges
       fullName: TestSuite.PowerupMetreCharges
       resultStatus: 1
-      duration: 0.1925688
+      duration: 0.1047724
       messages: 
       output: 
       stacktrace: 
@@ -535,13 +552,13 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1001
       parentUniqueId: Tests.dll/[Tests][TestSuite][suite]
-    m_ResultText: PowerupMetreCharges (0.193s)
+    m_ResultText: ButtonPressStartsInvincibility (0.205s)
     m_ResultStacktrace: 
     m_TestListState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 9804a15b
-      m_LastClickedID: 1537279128
-      m_ExpandedIDs: 6385588f2a8e979c4dad7d1345dca17bffffff7f
+      m_SelectedIDs: 7d9481eb
+      m_LastClickedID: -343829379
+      m_ExpandedIDs: 6385588f2a8e979c4dad7d131471f13845dca17bffffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -661,36 +678,36 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/RW
+    - Assets/RW/Resources/Prefabs
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/RW
+  - Assets/RW/Resources/Prefabs
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\gameuser\Desktop\4th Year Work\Real World Modeling\Crashteroids_C00248444_C00250593\Crashteroids
+  m_LastProjectPath: C:\Users\gameuser\Desktop\Actual Crashteroids for lab 4\Crashteroids\Crashteroids
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 484d0000
-    m_LastClickedID: 19784
-    m_ExpandedIDs: 000000003c4d0000484d0000864d000000ca9a3bffffff7f
+    m_SelectedIDs: 40730000
+    m_LastClickedID: 29504
+    m_ExpandedIDs: 000000003a4d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Tests
-      m_OriginalName: Tests
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 19852
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 5}
     m_SearchString: 
@@ -704,7 +721,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000003c4d0000
+    m_ExpandedIDs: 000000003a4d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -729,8 +746,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: f46c0000
+    m_LastClickedInstanceID: 27892
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
@@ -836,7 +853,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 74daffffb2e0fffff2e0fffffee2ffff34e4ffff74e4ffff82e6ffffc4e7ffff04e8fffffce9ffffe0eaffff20ebffff18edffff1aeeffff5aeeffff40f6ffff2efbffff30fbffff
+      m_ExpandedIDs: 30fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1248,7 +1265,7 @@ MonoBehaviour:
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
     m_HSlider: 0
-    m_VSlider: 0
+    m_VSlider: 1
     m_IgnoreScrollWheelUntilClicked: 0
     m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
@@ -1261,7 +1278,7 @@ MonoBehaviour:
       y: 21
       width: 1101.5
       height: 519
-    m_Scale: {x: 0.48055556, y: 0.48055556}
+    m_Scale: {x: 0.5, y: 0.5}
     m_Translation: {x: 550.75, y: 259.5}
     m_MarginLeft: 0
     m_MarginRight: 0
@@ -1269,12 +1286,12 @@ MonoBehaviour:
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -1146.0693
-      y: -540
-      width: 2292.1387
-      height: 1080
+      x: -1101.5
+      y: -519
+      width: 2203
+      height: 1038
     m_MinimalGUI: 1
-  m_defaultScale: 0.48055556
+  m_defaultScale: 0.5
   m_LastWindowPixelSize: {x: 2203, y: 1080}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1

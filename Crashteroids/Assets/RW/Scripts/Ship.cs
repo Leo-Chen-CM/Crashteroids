@@ -38,6 +38,7 @@ public class Ship : MonoBehaviour
     public float speed = 1;
     public bool canShoot = true;
     public bool powerUpActive = false;
+    [SerializeField]
     public bool invincibilityActivated = false;
 
     [SerializeField]
