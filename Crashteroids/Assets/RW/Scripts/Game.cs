@@ -124,6 +124,11 @@ public class Game : MonoBehaviour
         return powerText;
     }
 
+    public Text GetLivesText()
+    {
+        return livesText;
+    }
+
     public static Game GetInstance()
     {
         return instance;

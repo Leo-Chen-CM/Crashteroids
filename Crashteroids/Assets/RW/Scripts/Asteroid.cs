@@ -61,11 +61,14 @@ public class Asteroid : MonoBehaviour
             {
                 if (Game.getInstance().GetShip().lives > 1)
                 {
+
                     Game.getInstance().GetShip().lives--;
+                    Game.getInstance().GetLivesText().text = "Lives: " + Game.getInstance().GetShip().lives;
                 }
                 else
                 {
                     Game.getInstance().GetShip().lives--;
+                    Game.getInstance().GetLivesText().text = "Lives: " + Game.getInstance().GetShip().lives;
                     Game.GameOver();
                 }
 
